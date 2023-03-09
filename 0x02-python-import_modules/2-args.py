@@ -14,4 +14,3 @@ if itr > 2:
     print("{:d} arguments:".format(itr - 1))
     for i in range(1, itr):
         print("{:d}: {:s}".format(i, sys.argv[i]))
-
