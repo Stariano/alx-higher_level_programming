@@ -1,10 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 
 def no_c(my_string):
-    my_new_string = ""
-    for i in range(len(my_string)):
-        if my_string[i] == 'c' or my_string[i] == 'C':
-            continue
-        my_new_string += my_string[i]
-    return my_new_string
+    output = my_string.translate({ord(i): None for i in 'cC'})
+    return output
