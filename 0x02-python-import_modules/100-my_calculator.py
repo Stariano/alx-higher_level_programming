@@ -16,4 +16,4 @@ if __name__ == "__main__":
         print("{} {} {} = {}".format(var1, sys.argv[2], var2, dictt[sys.argv[2]](var1, var2)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
-        exit 1
+        exit(1)
