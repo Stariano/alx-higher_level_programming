@@ -3,11 +3,13 @@
 
 def best_score(a_dictionary):
     max = 0
-
+    key = 0
     if a_dictionary is None:
         return None
 
     for i in a_dictionary.values():
         if i > max:
             max = i
-    return max
+            key += 1
+    highest = list(a_dictionary)[key - 1]
+    return a_dictionary[key]
