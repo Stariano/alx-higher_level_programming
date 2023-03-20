@@ -9,5 +9,5 @@ def best_score(a_dictionary):
     for i in a_dictionary.values():
         if i > max:
             max = i
-    highest = [i for i in a_dictionary if a_dictionary[i]== max][0]
+    highest = [i for i in a_dictionary if a_dictionary[i] == max][0]
     return highest
