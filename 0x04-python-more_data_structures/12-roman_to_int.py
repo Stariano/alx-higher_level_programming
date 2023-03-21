@@ -5,10 +5,14 @@ def roman_to_int(roman_string):
     num = 0
     rangee = range(len(roman_string))
     lenn = len(roman_string) - 1
+
     xchecker = 0
     vchecker = 0
     lchecker = 0
     cchecker = 0
+    dchecker = 0
+    mchecker = 0
+
     roman = roman_string
 
     if not roman_string or type(roman_string) != str:
@@ -27,6 +31,12 @@ def roman_to_int(roman_string):
         elif roman[i] == 'X' and roman[i + 1 if i + 1 <= lenn else i] == 'C':
             num += 90
             cchecker = 2
+        elif roman[i] == 'C' and roman[i + 1 if i + 1 <= lenn else i] == 'D':
+            num += 400
+            dchecker = 2
+        elif roman[i] == 'C' and roman[i + 1 if i + 1 <= lenn else i] == 'M':
+            num += 900
+            mchecker = 2
         elif roman_string[i] == "I":
             num += 1
         elif roman_string[i] == 'V' and vchecker <= 0:
@@ -37,12 +47,14 @@ def roman_to_int(roman_string):
             num += 50
         elif roman_string[i] == 'C' and cchecker <= 0:
             num += 100
-        elif roman_string[i] == 'D':
+        elif roman_string[i] == 'D' and dchecker <= 0:
             num += 500
-        elif roman_string[i] == 'M':
+        elif roman_string[i] == 'M' and mchecker <= 0:
             num += 1000
         xchecker -= 1
         vchecker -= 1
         lchecker -= 1
         cchecker -= 1
+        dchecker -= 1
+        mchecker -= 1
     return num
