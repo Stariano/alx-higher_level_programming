@@ -4,18 +4,19 @@
 def roman_to_int(roman_string):
     num = 0
     rangee = range(len(roman_string))
-    lengthh = len(roman_string) - 1
+    lenn = len(roman_string) - 1
     xchecker = 0
     vchecker = 0
-    
+    roman = roman_string
+
     if not roman_string or type(roman_string) != str:
         return 0
-        
+
     for i in rangee:
-        if roman_string[i]== 'I' and roman_string[i + 1 if i + 1 <= lengthh else i]  == 'X':
+        if roman[i] == 'I' and roman[i + 1 if i + 1 <= lenn else i] == 'X':
             num += 9
             xchecker = 2
-        elif roman_string[i]== 'I' and roman_string[i + 1 if i + 1 <= lengthh else i] == 'V':
+        elif roman[i] == 'I' and roman[i + 1 if i + 1 <= lenn else i] == 'V':
             num += 4
             vchecker = 2
         elif roman_string[i] == "I":
