@@ -3,21 +3,35 @@
 
 def roman_to_int(roman_string):
     num = 0
+    rangee = range(len(roman_string))
+    lengthh = len(roman_string) - 1
+    xchecker = 0
+    vchecker = 0
+    
     if not roman_string or type(roman_string) != str:
         return 0
-    for i in roman_string:
-        if i == 'I':
+        
+    for i in rangee:
+        if roman_string[i]== 'I' and roman_string[i + 1 if i + 1 <= lengthh else i]  == 'X':
+            num += 9
+            xchecker = 2
+        elif roman_string[i]== 'I' and roman_string[i + 1 if i + 1 <= lengthh else i] == 'V':
+            num += 4
+            vchecker = 2
+        elif roman_string[i] == "I":
             num += 1
-        elif i == 'V':
+        elif roman_string[i] == 'V' and vchecker <= 0:
             num += 5
-        elif i == 'X':
+        elif roman_string[i] == 'X' and xchecker <= 0:
             num += 10
-        elif i == 'L':
+        elif roman_string[i] == 'L':
             num += 50
-        elif i == 'C':
+        elif roman_string[i] == 'C':
             num += 100
-        elif i == 'D':
+        elif roman_string[i] == 'D':
             num += 500
-        elif i == 'M':
+        elif roman_string[i] == 'M':
             num += 1000
+        xchecker -= 1
+        vchecker -= 1
     return num
