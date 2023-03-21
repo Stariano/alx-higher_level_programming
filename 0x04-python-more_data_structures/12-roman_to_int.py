@@ -7,8 +7,8 @@ def roman_to_int(roman_string):
     lenn = len(roman_string) - 1
     xchecker = 0
     vchecker = 0
-    lchecker -= 0
-    cchecker -= 0
+    lchecker = 0
+    cchecker = 0
     roman = roman_string
 
     if not roman_string or type(roman_string) != str:
