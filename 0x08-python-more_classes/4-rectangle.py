@@ -53,7 +53,7 @@ class Rectangle:
     def __str__(self):
         """Return the printable representation of the Rectangle."""
         if self.height == 0 or self.__width == 0:
-           return("")
+            return("")
 
         listt = []
         for i in range(self.__height):
