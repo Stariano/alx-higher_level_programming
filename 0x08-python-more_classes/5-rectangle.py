@@ -25,7 +25,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value    
+        self.__width = value
 
     @property
     def height(self):
@@ -53,8 +53,7 @@ class Rectangle:
     def __str__(self):
         """Return the printable representation of the Rectangle."""
         if self.height == 0 or self.__width == 0:
-           return("")
-
+            return("")
         listt = []
         for i in range(self.__height):
             for m in range(self.__width):
@@ -69,4 +68,4 @@ class Rectangle:
 
     def __del__(self):
         """Delete the instance."""
-	return("Bye rectangle...")
+        return("Bye rectangle...")

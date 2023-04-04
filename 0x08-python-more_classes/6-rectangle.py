@@ -4,11 +4,12 @@
 
 class Rectangle:
     """Represent a rectangle.
-    
+
     Attributes:
         number_of_instances (int): The number of Rectangle instances.
     """
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
         Args:
@@ -17,7 +18,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-	type(self).number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -30,7 +31,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value    
+        self.__width = value
 
     @property
     def height(self):
@@ -58,7 +59,7 @@ class Rectangle:
     def __str__(self):
         """Return the printable representation of the Rectangle."""
         if self.height == 0 or self.__width == 0:
-           return("")
+            return("")
 
         listt = []
         for i in range(self.__height):
